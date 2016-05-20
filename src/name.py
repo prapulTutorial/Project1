@@ -1,7 +1,15 @@
+from rajesh.classes.class1 import Student
+import datetime
 def printName(name):
     print str(name)
 
 
-printName("Prapul")
+today = datetime.date.today()
+s1=Student('rajesh',today,'a1');
 
-print 'hi'
+s2=Student();
+
+
+
+print s1
+print s2
