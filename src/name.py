@@ -3,3 +3,5 @@ def printName(name):
 
 
 printName("Prapul")
+
+print 'hi'
