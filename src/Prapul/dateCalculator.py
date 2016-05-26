@@ -1,4 +1,9 @@
 def checkDate(date):
+    """
+    :param date: str in format yyyy-mm-dd
+    :return: year, month, day (int)
+    checks whether date is valid and returns year, month and day
+    """
     date = str(date)
     # check format
     if len(date) != 10:
@@ -34,14 +39,19 @@ def checkDate(date):
 
 
 def getDay(date):
+    """
+    :param date: str in yyyy-mm-dd
+    :return: the day of the week on which date falls
+
+    """
     # date is checked for correct format and monthyear and day extracted from it
     year,month,day = checkDate(date)
     if month == 0:
         return "Incorrect input"
 
-    # For every year since 0001 total number of days of that year is added to the day depending on whether or not it is a leap year
-    for i in range(1,year):
-        if i%4 == 0 and (i%100 != 0 or i%400 == 0):
+    # For every year since the latest 400th year total number of days of that year is added to the day depending on whether or not it is a leap year
+    for i in range(1,year%400):
+        if i%4 == 0 and i%100 != 0:
             day += 366
         else:
             day += 365
