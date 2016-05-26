@@ -11,4 +11,4 @@ class subclass(First, Second):
         super(subclass, self).__init__()
 
 
-s1=
+s1=sup
